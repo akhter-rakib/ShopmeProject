@@ -23,6 +23,10 @@ public class Role {
     public Role() {
     }
 
+    public Role(Integer id) {
+        this.id = id;
+    }
+
     public Role(String name, String description) {
         this.name = name;
         this.description = description;
@@ -50,5 +54,13 @@ public class Role {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @Override
+    public String toString() {
+        return "Role{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                '}';
     }
 }
