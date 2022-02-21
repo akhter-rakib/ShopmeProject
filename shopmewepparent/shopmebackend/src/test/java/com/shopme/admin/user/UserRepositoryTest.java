@@ -89,4 +89,10 @@ public class UserRepositoryTest {
         }
 
     }
+
+    @Test
+    public void testDeleteUser() {
+        Integer userId = 9;
+        userRepository.deleteById(userId);
+    }
 }
