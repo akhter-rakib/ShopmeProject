@@ -102,4 +102,10 @@ public class UserRepositoryTest {
         assertThat(user).isNotNull();
         System.out.println("Lol");
     }
+
+    @Test
+    public void testCountById() {
+        Long count = userRepository.countById(6);
+        assertThat(count).isNotNull().isGreaterThan(0);
+    }
 }
