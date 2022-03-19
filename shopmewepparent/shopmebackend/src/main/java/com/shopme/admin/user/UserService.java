@@ -5,6 +5,7 @@ import com.shopme.common.entity.User;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -69,6 +70,11 @@ public class UserService {
             throw new UserNotFoundException("Could Not find any user with the id" + id);
         }
         userRepository.deleteById(id);
+    }
+
+    @Transactional
+    public void userStatusUpdate(Integer id, boolean enable) {
+        userRepository.updateEnableStatus(enable, id);
     }
 }
 
